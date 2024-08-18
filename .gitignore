@@ -1,0 +1,9 @@
+# client configuration files
+client-config/
+
+# data folder
+data/
+!data/README.md
+
+# secrets
+vars
