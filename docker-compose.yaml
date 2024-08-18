@@ -1,0 +1,12 @@
+services:
+  taskserver:
+    image: taskserver
+    container_name: taskserver
+    restart: unless-stopped
+    volumes:
+      - ./vars:/var/taskd/pki/vars:ro
+      - ./data:/var/taskd/
+    ports:
+      - 53589:53589
+    command: sh -c "/root/init.sh && taskdctl start && exec sleep infinity"
+
